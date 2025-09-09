@@ -1,0 +1,113 @@
+[gd_scene load_steps=13 format=3 uid="uid://dx5tduc0q17fe"]
+
+[ext_resource type="Texture2D" uid="uid://dt14ypbjlla8f" path="res://Textures/stone-pixel-buttons-old-school-video-game-vector-51587999.jpg" id="1_tvywd"]
+[ext_resource type="Texture2D" uid="uid://cr7nau3w7t01g" path="res://Textures/stone-pixel-buttons-hover.jpg" id="2_acbdb"]
+[ext_resource type="Texture2D" uid="uid://p8kynp3t3ktc" path="res://Textures/stone-pixel-buttons-pressed.jpg" id="3_qdscy"]
+[ext_resource type="PackedScene" uid="uid://bq5507ckhk330" path="res://pause_menu.tscn" id="5_6tkiu"]
+[ext_resource type="Script" path="res://FileManager.gd" id="6_lw2dp"]
+
+[sub_resource type="GDScript" id="GDScript_w8shm"]
+script/source = "extends Control
+
+@onready var health_bar = $player_health
+
+func _ready():
+	if not is_in_level_scene():
+		self.visible = false
+	else:
+		self.visible = true
+
+func is_in_level_scene() -> bool:
+	var current_scene = get_tree().current_scene
+	if current_scene == null:
+		return false
+	var scene_name = current_scene.name
+	# Adjust this logic to fit your naming convention
+	return scene_name.begins_with(\"Level_\")
+	
+func update_health(current_health: int, max_health: int):
+	health_bar.max_value = max_health
+	health_bar.value = current_health
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sr2fr"]
+bg_color = Color(0.843137, 0.305882, 0.298039, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ulg2"]
+bg_color = Color(0.34902, 0.501961, 0.313726, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3tc5u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th281"]
+atlas = ExtResource("1_tvywd")
+region = Rect2(348, 29, 129, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67hnt"]
+atlas = ExtResource("2_acbdb")
+region = Rect2(350, 28, 126, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjqy3"]
+atlas = ExtResource("3_qdscy")
+region = Rect2(352, 29, 124, 97)
+
+[node name="HUDRoot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_w8shm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="player_health" type="ProgressBar" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 771.0
+offset_top = 20.0
+offset_right = 775.0
+offset_bottom = 34.0
+scale = Vector2(94.0494, 1.70135)
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_sr2fr")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1ulg2")
+value = 100.0
+show_percentage = false
+
+[node name="Life" type="TextureRect" parent="CanvasLayer"]
+offset_left = 724.0
+offset_top = 15.0
+offset_right = 756.0
+offset_bottom = 527.0
+scale = Vector2(1.31294, 0.0756456)
+texture = SubResource("CompressedTexture2D_3tc5u")
+
+[node name="Button" type="TextureButton" parent="CanvasLayer"]
+offset_left = 16.0
+offset_top = 15.0
+offset_right = 145.0
+offset_bottom = 112.0
+scale = Vector2(0.718532, 0.717499)
+texture_normal = SubResource("AtlasTexture_th281")
+texture_pressed = SubResource("AtlasTexture_67hnt")
+texture_hover = SubResource("AtlasTexture_mjqy3")
+
+[node name="PauseScreen" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.564706)
+
+[node name="PauseMenu" parent="CanvasLayer/PauseScreen" instance=ExtResource("5_6tkiu")]
+layout_mode = 1
+offset_left = 2.0
+offset_right = 2.0
+script = null
+
+[node name="Node2D" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("6_lw2dp")
