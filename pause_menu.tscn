@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq5507ckhk330"]
+
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_tsy8l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuerb"]
+bg_color = Color(0.792157, 0.843137, 0.882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbb7b"]
+bg_color = Color(0.466667, 0.564706, 0.662745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_88eqn"]
+bg_color = Color(0.34902, 0.431373, 0.513726, 1)
+
+[node name="PauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tsy8l")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -107.0
+offset_right = 132.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "= Pause ="
+horizontal_alignment = 1
+
+[node name="Resume" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_cuerb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rbb7b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_88eqn")
+text = "Resume"
+
+[node name="Restart" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_cuerb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rbb7b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_88eqn")
+text = "Restart
+"
+
+[node name="Exit" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_cuerb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rbb7b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_88eqn")
+text = "Exit"

@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://bq3lcmabk0q2x"]
+
+[ext_resource type="Texture2D" uid="uid://dgvhntpy40mj1" path="res://Textures/FreeDemo.png" id="1_rfa4v"]
+[ext_resource type="FontFile" uid="uid://c6pcc8r3yr3yk" path="res://fonts/Crashnumberingserif-KVjW.ttf" id="2_2ngsy"]
+[ext_resource type="Script" path="res://UI/texture_button.gd" id="2_svifn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1dks"]
+atlas = ExtResource("1_rfa4v")
+region = Rect2(113, 69, 14, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l608f"]
+atlas = ExtResource("1_rfa4v")
+region = Rect2(65, 68, 14, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wiu1"]
+atlas = ExtResource("1_rfa4v")
+region = Rect2(65, 52, 14, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlgd7"]
+atlas = ExtResource("1_rfa4v")
+region = Rect2(81, 69, 14, 9)
+
+[node name="TextureButton" type="TextureButton"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+offset_right = 145.0
+offset_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_normal = SubResource("AtlasTexture_q1dks")
+texture_pressed = SubResource("AtlasTexture_l608f")
+texture_hover = SubResource("AtlasTexture_0wiu1")
+texture_disabled = SubResource("AtlasTexture_nlgd7")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("2_svifn")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.219608, 0.345098, 0.262745, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_2ngsy")
+theme_override_font_sizes/font_size = 30
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

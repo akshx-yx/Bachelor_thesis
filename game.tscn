@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://4qa8tmdo6cdq"]
+
+[ext_resource type="PackedScene" uid="uid://bq5507ckhk330" path="res://pause_menu.tscn" id="1_ps5wc"]
+[ext_resource type="PackedScene" uid="uid://bcfob7is4pyc7" path="res://Levels/Level_1.tscn" id="2_fqita"]
+
+[sub_resource type="GDScript" id="GDScript_wi28r"]
+script/source = "extends Node2D
+
+func _input(event: InputEvent):
+	if (event.is_action_pressed(\"ui_cancel\")):
+		var current_value: bool = get_tree().paused
+		get_tree().paused = !current_value
+"
+
+[node name="Game" type="Node2D"]
+process_mode = 3
+script = SubResource("GDScript_wi28r")
+
+[node name="Level_1" parent="." instance=ExtResource("2_fqita")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("1_ps5wc")]

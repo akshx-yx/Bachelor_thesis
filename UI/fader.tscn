@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cljiouwrm2qf4"]
+
+[ext_resource type="Script" path="res://UI/fader.gd" id="1_n83up"]
+
+[node name="fader" type="ColorRect"]
+offset_right = 1161.0
+offset_bottom = 640.0
+script = ExtResource("1_n83up")

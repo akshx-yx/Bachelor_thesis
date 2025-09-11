@@ -1,0 +1,122 @@
+[gd_scene load_steps=12 format=3 uid="uid://8yfjj4vpyqhn"]
+
+[ext_resource type="Script" path="res://MainScreen.gd" id="1_jr6e0"]
+[ext_resource type="PackedScene" uid="uid://catp3auacnmoa" path="res://bg.tscn" id="1_n0g01"]
+[ext_resource type="PackedScene" uid="uid://3jidp6u6okrp" path="res://level_select.tscn" id="2_5phvg"]
+[ext_resource type="FontFile" uid="uid://csdh3fpqnkyke" path="res://fonts/PentaGrams Malefissent.ttf" id="2_v8pc3"]
+[ext_resource type="PackedScene" uid="uid://cljiouwrm2qf4" path="res://UI/fader.tscn" id="5_2vei2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ehoi"]
+bg_color = Color(0.792157, 0.843137, 0.882353, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfcjf"]
+bg_color = Color(0.466667, 0.564706, 0.662745, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eeibs"]
+bg_color = Color(0.34902, 0.431373, 0.513726, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6y8nu"]
+bg_color = Color(0.792157, 0.843137, 0.882353, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36cto"]
+bg_color = Color(0.466667, 0.564706, 0.662745, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_apn8r"]
+bg_color = Color(0.34902, 0.431373, 0.513726, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[node name="MainScreen" type="Node2D"]
+script = ExtResource("1_jr6e0")
+next_level = ExtResource("2_5phvg")
+
+[node name="BG" parent="." instance=ExtResource("1_n0g01")]
+
+[node name="Start" type="Button" parent="."]
+texture_filter = 1
+offset_left = 469.0
+offset_top = 254.0
+offset_right = 679.0
+offset_bottom = 319.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ehoi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gfcjf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eeibs")
+text = "Start game"
+
+[node name="Exit" type="Button" parent="."]
+texture_filter = 1
+offset_left = 473.0
+offset_top = 334.0
+offset_right = 677.0
+offset_bottom = 402.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_6y8nu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_36cto")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_apn8r")
+text = "Exit
+"
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 290.0
+offset_top = 127.0
+offset_right = 879.0
+offset_bottom = 224.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_v8pc3")
+theme_override_font_sizes/font_size = 70
+text = "Shattered Elements"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="fader" parent="." instance=ExtResource("5_2vei2")]
+visible = false
+modulate = Color(0.211765, 0.211765, 0.211765, 1)
+visibility_layer = 1048575
+texture_filter = 1
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
