@@ -1,0 +1,509 @@
+[gd_scene load_steps=74 format=3 uid="uid://bhd7t4lgqkkll"]
+
+[ext_resource type="Texture2D" uid="uid://cpja1s18lrbwr" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_1.png" id="1_3m27h"]
+[ext_resource type="Texture2D" uid="uid://ccrrnb3jss6g5" path="res://Bosses/fire_boss/individual sprites/03_demon_cleave/demon_cleave_1.png" id="1_hg26y"]
+[ext_resource type="Script" path="res://Bosses/fire_boss.gd" id="1_p65ds"]
+[ext_resource type="Texture2D" uid="uid://li2srvjt7d2m" path="res://Bosses/fire_boss/individual sprites/03_demon_cleave/demon_cleave_2.png" id="2_7invb"]
+[ext_resource type="Texture2D" uid="uid://ydrx7qn3ciib" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_2.png" id="2_tf7i3"]
+[ext_resource type="Texture2D" uid="uid://crkirqbtbptss" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_3.png" id="3_m27et"]
+[ext_resource type="Texture2D" uid="uid://djg2ryu6pn813" path="res://Bosses/fire_boss/individual sprites/03_demon_cleave/demon_cleave_3.png" id="3_r6oos"]
+[ext_resource type="Texture2D" uid="uid://cos1smrv3e5hh" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_4.png" id="4_8cimt"]
+[ext_resource type="Texture2D" uid="uid://b8gwwyaflncdj" path="res://Bosses/fire_boss/individual sprites/03_demon_cleave/demon_cleave_4.png" id="4_55use"]
+[ext_resource type="Texture2D" uid="uid://bfnntijjtbnmd" path="res://Bosses/fire_boss/individual sprites/03_demon_cleave/demon_cleave_5.png" id="5_0sjgh"]
+[ext_resource type="Texture2D" uid="uid://dgrsm243gokgy" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_5.png" id="5_vxxsq"]
+[ext_resource type="Texture2D" uid="uid://0d3t6uei3i3l" path="res://Bosses/fire_boss/individual sprites/03_demon_cleave/demon_cleave_6.png" id="6_5rt0e"]
+[ext_resource type="Texture2D" uid="uid://bfcvonah7if0p" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_6.png" id="6_yjc7g"]
+[ext_resource type="Texture2D" uid="uid://b84wklx38bhpq" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_7.png" id="7_0ccar"]
+[ext_resource type="Texture2D" uid="uid://d3ulx58bt4vcd" path="res://Bosses/fire_boss/individual sprites/03_demon_cleave/demon_cleave_7.png" id="7_hqb4b"]
+[ext_resource type="Texture2D" uid="uid://dqdqctgxblycw" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_8.png" id="8_1roc7"]
+[ext_resource type="Texture2D" uid="uid://bq57e4euwxr2e" path="res://Bosses/fire_boss/individual sprites/03_demon_cleave/demon_cleave_8.png" id="8_2y5eq"]
+[ext_resource type="Texture2D" uid="uid://bg70vx7eb8pfx" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_9.png" id="9_2w30b"]
+[ext_resource type="Texture2D" uid="uid://c5an4xcm7c2ql" path="res://Bosses/fire_boss/individual sprites/03_demon_cleave/demon_cleave_9.png" id="9_3ep1g"]
+[ext_resource type="Texture2D" uid="uid://b4evgmhq2cwl6" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_10.png" id="10_kv7ac"]
+[ext_resource type="Texture2D" uid="uid://cn8khb2mc4xws" path="res://Bosses/fire_boss/individual sprites/03_demon_cleave/demon_cleave_10.png" id="10_vu7n6"]
+[ext_resource type="Texture2D" uid="uid://ry2rhxwvis4v" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_11.png" id="11_l7m25"]
+[ext_resource type="Texture2D" uid="uid://dxkpr2tlkwh5r" path="res://Bosses/fire_boss/individual sprites/03_demon_cleave/demon_cleave_11.png" id="11_xvhem"]
+[ext_resource type="Texture2D" uid="uid://bjx1ot803ofy0" path="res://Bosses/fire_boss/individual sprites/03_demon_cleave/demon_cleave_12.png" id="12_35fmu"]
+[ext_resource type="Texture2D" uid="uid://dbvlnv3t4t1b" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_12.png" id="12_haiv6"]
+[ext_resource type="Texture2D" uid="uid://8ywrme3f0ji0" path="res://Bosses/fire_boss/individual sprites/03_demon_cleave/demon_cleave_13.png" id="13_efkfl"]
+[ext_resource type="Texture2D" uid="uid://dkts71aswnslj" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_13.png" id="13_unt4q"]
+[ext_resource type="Texture2D" uid="uid://crxp3i7ku1ixm" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_14.png" id="14_fob8o"]
+[ext_resource type="Texture2D" uid="uid://c0oc5outetmhf" path="res://Bosses/fire_boss/individual sprites/03_demon_cleave/demon_cleave_14.png" id="14_xt486"]
+[ext_resource type="Texture2D" uid="uid://dgq513y5qpayj" path="res://Bosses/fire_boss/individual sprites/03_demon_cleave/demon_cleave_15.png" id="15_0ocv4"]
+[ext_resource type="Texture2D" uid="uid://bk8gjetar47ks" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_15.png" id="15_jbnri"]
+[ext_resource type="Texture2D" uid="uid://c7rs5vfcm5kad" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_16.png" id="16_5dkh5"]
+[ext_resource type="Texture2D" uid="uid://qsoy6bgqqatc" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_17.png" id="17_tnoey"]
+[ext_resource type="Texture2D" uid="uid://cecrj5m1g2pg6" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_18.png" id="18_pwqdb"]
+[ext_resource type="Texture2D" uid="uid://8prd8mjmvkxi" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_19.png" id="19_ykxfy"]
+[ext_resource type="Texture2D" uid="uid://c32db1pw5kllk" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_20.png" id="20_sibe8"]
+[ext_resource type="Texture2D" uid="uid://veftms5ndyxd" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_21.png" id="21_0bvw0"]
+[ext_resource type="Texture2D" uid="uid://ci81knrppa3tt" path="res://Bosses/fire_boss/individual sprites/05_demon_death/demon_death_22.png" id="22_luacx"]
+[ext_resource type="Texture2D" uid="uid://cfsvl1h7rkafj" path="res://Bosses/fire_boss/individual sprites/01_demon_idle/demon_idle_1.png" id="23_2fv4l"]
+[ext_resource type="Texture2D" uid="uid://csbgaskbuyili" path="res://Bosses/fire_boss/individual sprites/01_demon_idle/demon_idle_2.png" id="24_lulao"]
+[ext_resource type="Texture2D" uid="uid://mgdn1hcmwnom" path="res://Bosses/fire_boss/individual sprites/01_demon_idle/demon_idle_3.png" id="25_7k6oy"]
+[ext_resource type="Texture2D" uid="uid://csrqp5lsnnglu" path="res://Bosses/fire_boss/individual sprites/01_demon_idle/demon_idle_4.png" id="26_rhedp"]
+[ext_resource type="Texture2D" uid="uid://cn1wc7ljtre7o" path="res://Bosses/fire_boss/individual sprites/01_demon_idle/demon_idle_5.png" id="27_jku2q"]
+[ext_resource type="Texture2D" uid="uid://dnv31wopgdpo3" path="res://Bosses/fire_boss/individual sprites/01_demon_idle/demon_idle_6.png" id="28_37faq"]
+[ext_resource type="Texture2D" uid="uid://ce43h76kuo6q5" path="res://Bosses/fire_boss/individual sprites/02_demon_walk/demon_walk_1.png" id="29_up7u0"]
+[ext_resource type="Texture2D" uid="uid://c8f5ogrkskxys" path="res://Bosses/fire_boss/individual sprites/02_demon_walk/demon_walk_2.png" id="30_gwqly"]
+[ext_resource type="Texture2D" uid="uid://dtnrmeq33cmk6" path="res://Bosses/fire_boss/individual sprites/02_demon_walk/demon_walk_3.png" id="31_2qeyk"]
+[ext_resource type="Texture2D" uid="uid://bhj5j8ofuhuud" path="res://Bosses/fire_boss/individual sprites/02_demon_walk/demon_walk_4.png" id="32_stief"]
+[ext_resource type="Texture2D" uid="uid://br18e1nptroup" path="res://Bosses/fire_boss/individual sprites/02_demon_walk/demon_walk_5.png" id="33_3wkws"]
+[ext_resource type="Texture2D" uid="uid://dsrxj3bwl6a75" path="res://Bosses/fire_boss/individual sprites/02_demon_walk/demon_walk_6.png" id="34_vgf7t"]
+[ext_resource type="Texture2D" uid="uid://byj0b3t4y5lto" path="res://Bosses/fire_boss/individual sprites/02_demon_walk/demon_walk_7.png" id="35_ov2vq"]
+[ext_resource type="Texture2D" uid="uid://c8gcywpruhlhg" path="res://Bosses/fire_boss/individual sprites/02_demon_walk/demon_walk_8.png" id="36_s1mj2"]
+[ext_resource type="Texture2D" uid="uid://b3u3g151ta01w" path="res://Bosses/fire_boss/individual sprites/02_demon_walk/demon_walk_9.png" id="37_251n5"]
+[ext_resource type="Texture2D" uid="uid://dqqjj81scfkbn" path="res://Bosses/fire_boss/individual sprites/02_demon_walk/demon_walk_10.png" id="38_o23rj"]
+[ext_resource type="Texture2D" uid="uid://cfha8uuj1rt6b" path="res://Bosses/fire_boss/individual sprites/02_demon_walk/demon_walk_11.png" id="39_o3xwj"]
+[ext_resource type="Texture2D" uid="uid://evenhqfjv860" path="res://Bosses/fire_boss/individual sprites/02_demon_walk/demon_walk_12.png" id="40_lgwkm"]
+[ext_resource type="Texture2D" uid="uid://drj5alnr67nx3" path="res://Bosses/fire_boss/individual sprites/04_demon_take_hit/demon_take_hit_1.png" id="41_2ehcq"]
+[ext_resource type="Texture2D" uid="uid://crqys3xfynanl" path="res://Bosses/fire_boss/individual sprites/04_demon_take_hit/demon_take_hit_2.png" id="42_v3muo"]
+[ext_resource type="Texture2D" uid="uid://csqbfu5pu3cmg" path="res://Bosses/fire_boss/individual sprites/04_demon_take_hit/demon_take_hit_3.png" id="43_23tsg"]
+[ext_resource type="Texture2D" uid="uid://bd6r61hnbqccq" path="res://Bosses/fire_boss/individual sprites/04_demon_take_hit/demon_take_hit_4.png" id="44_g8qca"]
+[ext_resource type="Texture2D" uid="uid://brgqwue07ifoe" path="res://Bosses/fire_boss/individual sprites/04_demon_take_hit/demon_take_hit_5.png" id="45_8qb08"]
+[ext_resource type="PackedScene" uid="uid://bof03sorlij0i" path="res://UI/enemy_healthbar.tscn" id="62_dyuw0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lfov4"]
+radius = 13.0
+height = 38.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_15ay8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hg26y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7invb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_r6oos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_55use")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0sjgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5rt0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hqb4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2y5eq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3ep1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vu7n6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_xvhem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_35fmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_efkfl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xt486")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_0ocv4")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3m27h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tf7i3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m27et")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8cimt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vxxsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yjc7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0ccar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1roc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2w30b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_kv7ac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_l7m25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_haiv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_unt4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fob8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_jbnri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5dkh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_tnoey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_pwqdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ykxfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_sibe8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_0bvw0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_luacx")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Enrage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_2fv4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_lulao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_7k6oy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_rhedp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_jku2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_37faq")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_up7u0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_gwqly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_2qeyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_stief")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_3wkws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_vgf7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ov2vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_s1mj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_251n5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_o23rj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_o3xwj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_lgwkm")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_2ehcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_v3muo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_23tsg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_g8qca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_8qb08")
+}],
+"loop": true,
+"name": &"Take_hit",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_cb2e3"]
+resource_name = "Attack"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Attack"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"apply_attack_damage"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_05s20"]
+resource_name = "Death"
+length = 2.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21]
+}
+
+[sub_resource type="Animation" id="Animation_tvajn"]
+resource_name = "Idle"
+length = 0.55
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_b5mk5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_3b0ph"]
+resource_name = "Run"
+length = 1.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Run"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_gqia4"]
+resource_name = "Take_Hit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Take_hit"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a88gv"]
+_data = {
+"Attack": SubResource("Animation_cb2e3"),
+"Death": SubResource("Animation_05s20"),
+"Idle": SubResource("Animation_tvajn"),
+"RESET": SubResource("Animation_b5mk5"),
+"Run": SubResource("Animation_3b0ph"),
+"Take_Hit": SubResource("Animation_gqia4")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yhc0"]
+size = Vector2(45, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8emm"]
+size = Vector2(106, 40)
+
+[node name="fire_boss" type="CharacterBody2D"]
+script = ExtResource("1_p65ds")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_lfov4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(6, -59)
+sprite_frames = SubResource("SpriteFrames_15ay8")
+animation = &"Attack"
+frame = 1
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+libraries = {
+"": SubResource("AnimationLibrary_a88gv")
+}
+
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(3.5, -14.5)
+shape = SubResource("RectangleShape2D_5yhc0")
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(83, 1)
+shape = SubResource("RectangleShape2D_u8emm")
+
+[node name="EnemyHealthbar" parent="." instance=ExtResource("62_dyuw0")]
+offset_left = -57.0
+offset_top = -97.0
+offset_right = 78.0
+offset_bottom = -85.0
+max_value = 350.0
+value = 350.0
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
