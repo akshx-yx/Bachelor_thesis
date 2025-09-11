@@ -1,0 +1,127 @@
+[gd_scene load_steps=14 format=3 uid="uid://tm6d7a8kbski"]
+
+[ext_resource type="Script" path="res://Level assets/portal.gd" id="1_df3ei"]
+[ext_resource type="Texture2D" uid="uid://cd366ioeg5xgu" path="res://Level assets/spinning coin.png" id="1_xxmb2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7s3bf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfrhj"]
+atlas = ExtResource("1_xxmb2")
+region = Rect2(0, 0, 20, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a87gu"]
+atlas = ExtResource("1_xxmb2")
+region = Rect2(20, 0, 20, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nj284"]
+atlas = ExtResource("1_xxmb2")
+region = Rect2(40, 0, 20, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri8do"]
+atlas = ExtResource("1_xxmb2")
+region = Rect2(60, 0, 20, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u51uu"]
+atlas = ExtResource("1_xxmb2")
+region = Rect2(80, 0, 20, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpmwn"]
+atlas = ExtResource("1_xxmb2")
+region = Rect2(100, 0, 20, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d5jju"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfrhj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a87gu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nj284")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ri8do")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u51uu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpmwn")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 2.0
+}]
+
+[sub_resource type="Animation" id="Animation_cne6n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_nx3yf"]
+resource_name = "spin"
+length = 0.6
+loop_mode = 1
+step = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"spin"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7wb2f"]
+_data = {
+"RESET": SubResource("Animation_cne6n"),
+"spin": SubResource("Animation_nx3yf")
+}
+
+[node name="portal" type="Area2D"]
+script = ExtResource("1_df3ei")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7s3bf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_d5jju")
+animation = &"spin"
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7wb2f")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
