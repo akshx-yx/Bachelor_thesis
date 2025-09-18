@@ -116,10 +116,19 @@ func _on_enemyhitbox_area_entered(area):
 		take_damage(OnscreenUi.playerDamageAmount)
 
 func take_damage(damage):
-	if dead:
+	if dead or taking_damage:
 		return
+
+	
+	if attacking:
+		attacking = false
+		# Optionally stop the attack animation immediately
+		if anim.current_animation == "Attack":
+			anim.stop()
+
 	health -= damage
 	taking_damage = true
+	anim.play("Take_hit")
 	if health <= 0:
 		health = 0
 		dead = true
