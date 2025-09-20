@@ -90,7 +90,7 @@ func _physics_process(delta):
 func trigger_attack(attack: String):
 	current_attack = true
 	attack_type = attack
-	await get_tree().create_timer(0.05).timeout # Small delay before attack starts
+	await get_tree().create_timer(0.05).timeout
 	handle_attack_animation(attack_type)
 	set_damage(attack_type)
 
@@ -111,23 +111,20 @@ func handle_attack_animation(attack_type: String):
 		_:
 			sprite.position.y = -5
 
-	# Now play the animation
 	anim.play(attack_type)
 	toggle_damage_collisions(attack_type)
 
 func toggle_damage_collisions(attack_type):
 	var damage_zone_collision = deal_damage_zone.get_node("CollisionShape2D")
-	damage_applied = false # Reset for new attack
+	damage_applied = false 
 	damage_zone_collision.disabled = false
-	# Wait for a very short moment (one physics frame) to register collision
 	await get_tree().create_timer(0.05).timeout
-	# Immediately disable the collision after applying damage
 	damage_zone_collision.disabled = true
 
 func _on_animation_finished(anim_name: String):
 	if anim_name.begins_with("atk_"):
 		current_attack = false
-		sprite.position.y = idle_y_position # Reset properly
+		sprite.position.y = idle_y_position 
 
 func set_damage(attack_type):
 	var current_damage_to_deal: int
@@ -181,10 +178,9 @@ func take_damage(damage: int):
 	if not can_take_damage or dead or damage <= 0: 
 		return 
 
-	# ✨ IMPORTANT: cancel any ongoing attack so _physics_process doesn't early-return
+	
 	if current_attack:
 		current_attack = false
-		# (optional safety) disable the attack hitbox immediately
 		var damage_zone_collision = deal_damage_zone.get_node("CollisionShape2D")
 		if damage_zone_collision:
 			damage_zone_collision.disabled = true
