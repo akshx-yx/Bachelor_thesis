@@ -17,9 +17,9 @@ var speed = 40
 var damage_to_deal = 20
 
 # AI ranges
-var detection_range = 150  # Enemy starts chasing player if within this distance
-var attack_range = 50      # Enemy attacks if within this distance
-var attack_cooldown = 1.5  # Seconds between attacks
+var detection_range = 150 
+var attack_range = 50 
+var attack_cooldown = 1.5 
 var last_attack_time = 0.0
 
 # Internal flags
@@ -72,15 +72,15 @@ func try_attack():
 	if player == null:
 		return
 
-	var current_time = Time.get_ticks_msec() / 1000.0  # Godot 4 replacement
+	var current_time = Time.get_ticks_msec() / 1000.0
 	if current_time - last_attack_time < attack_cooldown:
 		return  # Still in cooldown
 
 	last_attack_time = current_time
 	attacking = true
-	anim.play("Attack")  # Play attack animation
+	anim.play("Attack") 
 
-# --- This should be called on the "hit frame" of Attack animation ---
+
 func apply_attack_damage():
 	var overlapping_areas = $DealDamage.get_overlapping_bodies()
 	for body in overlapping_areas:
